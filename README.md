@@ -29,8 +29,23 @@ To learn more about Next.js, take a look at the following resources:
 
 You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## API TMDB Metadata
+[
+  {
+    adult: false,
+    backdrop_path: "/2Nti3gYAX513wvhp8IiLL6ZDyOm.jpg",
+    genre_ids: [10751, 35, 12, 14],
+    length: 4,
+    id: 950387,
+    original_language: "en",
+    original_title: "A Minecraft Movie",
+    overview: "Quatro desajustados enfrentam problemas comuns do dia a dia quando, de repente, são sugados por um portal misterioso para o Overworld: uma terra fascinante e cúbica,                   movida pela imaginação. Para voltarem para casa, eles precisarão dominar esse novo mundo enquanto embarcam em uma jornada mágica ao lado de um crafter experiente e                     inesperado: Steve.",
+    popularity: 868.2685,
+    poster_path: "/4VtkIaj76TpQNfhDHXQDdT9uBN5.jpg",
+    release_date: "2025-03-31",
+    title: "Um Filme Minecraft",
+    video: false,
+    vote_average: 6.521,
+    vote_count: 1191,
+  {
+]
