@@ -18,8 +18,10 @@ export const ApiContextProvider = ({children}: {children: ReactNode})=>{
             const apiUrl = `https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}a&language=pt-BR`
 
             const popularMovies = await axios.get(apiUrl)
+            const getMovies = popularMovies.data.results
+            setPopMovies(getMovies)
+
             console.log(popularMovies.data)
-            setPopMovies(popularMovies)
         }catch(error){
             console.log("Erro na requisição! "+error)
         }
