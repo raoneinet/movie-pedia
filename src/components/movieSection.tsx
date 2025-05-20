@@ -1,23 +1,58 @@
-import { useContext } from "react"
-import {apiContext} from "@/contexts/apiContext"
+import { useContext, useRef } from "react"
+import { apiContext } from "@/contexts/apiContext"
 
-export const MovieSection = ()=>{
+export const MovieSection = () => {
 
     const movieCtx = useContext(apiContext)
 
+    const movieContainerRef = useRef<HTMLDivElement>(null)
+
+    const handleLeft = ()=> {
+        if(movieCtx?.popMovies?.length && movieContainerRef.current){
+            if(movieContainerRef){
+                movieContainerRef.current.scrollBy({
+                    left: -200,
+                    behavior: "smooth"
+                })
+            }
+        }
+    }
+
+    const handleRight = () => {
+        if (movieCtx?.popMovies?.length && movieContainerRef.current) {
+            if (movieContainerRef) {
+                movieContainerRef.current.scrollBy({
+                    left: 200,
+                    behavior: "smooth"
+                })
+            }
+        }
+    }
+
     return (
-        <div className="mt-18">
+        <div className="my-18">
             <div className="container mx-auto pt-15">
-                <h1>Popular Movies</h1>
-                <div className="grid lg:grid-cols-7 gap-2">
+                <h1 className="font-bold text-lg text-gray-500 p-4">Popular Movies</h1>
+                <div 
+                    className="flex flex-nowrap gap-2 w-full overflow-x-hidden mask-x-from-85%" 
+                    ref={movieContainerRef}
+                >
                     {movieCtx?.popMovies?.map(item => (
-                        <div className="w-52 p-2 border border-gray-300 ">
+                        <div className="w-50 flex-none p-2 border border-gray-200 rounded-md" key={item.id}>
                             <div>
-                                <img src={`https://media.themoviedb.org/t/p/w220_and_h330_face${item.poster_path}`}/>
+                                <img className="inline-block w-90" src={`https://media.themoviedb.org/t/p/w220_and_h330_face${item.poster_path}`} />
                             </div>
-                            <h1>{item.title}</h1>
+                            <h1 className="font-bold pt-3">{item.title}</h1>
                         </div>
                     ))}
+                </div>
+                <div className="w-full inline-flex justify-between py-3 relative -top-55">
+                    <button className="cursor-pointer w-10" onClick={handleLeft}>
+                        <img src="/assets/icons/arrow-left.png"/>
+                    </button>
+                    <button className="cursor-pointer w-10" onClick={handleRight}>
+                        <img src="/assets/icons/arrow-right.png"/>
+                    </button>
                 </div>
             </div>
         </div>
