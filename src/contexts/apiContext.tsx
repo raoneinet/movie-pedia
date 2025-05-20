@@ -14,8 +14,8 @@ export const ApiContextProvider = ({children}: {children: ReactNode})=>{
 
     const movieRequest = async ()=>{
         try{
-            const apiKey = "0ddafbf76e41bd890af671879e1d297"
-            const apiUrl = `https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}a&language=pt-BR`
+            const apiKey = "0ddafbf76e41bd890af671879e1d297a"
+            const apiUrl = `https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}&language=pt-BR`
 
             const popularMovies = await axios.get(apiUrl)
             const getMovies = popularMovies.data.results
