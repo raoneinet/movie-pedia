@@ -1,15 +1,15 @@
 import { useContext, useRef } from "react"
-import { apiContext } from "@/contexts/popularMoviesCtx"
+import { TrendingContext } from "@/contexts/trendingAllCtx"
 
-export const MovieSection = () => {
+export const TrendingSection = () => {
 
-    const movieCtx = useContext(apiContext)
+    const trendCtx = useContext(TrendingContext)
 
     const movieContainerRef = useRef<HTMLDivElement>(null)
 
-    const handleLeft = ()=> {
-        if(movieCtx?.popMovies?.length && movieContainerRef.current){
-            if(movieContainerRef){
+    const handleLeft =()=>{
+        if(trendCtx?.trending.length && movieContainerRef.current){
+            if(movieContainerRef.current){
                 movieContainerRef.current.scrollBy({
                     left: -200,
                     behavior: "smooth"
@@ -18,26 +18,27 @@ export const MovieSection = () => {
         }
     }
 
-    const handleRight = () => {
-        if (movieCtx?.popMovies?.length && movieContainerRef.current) {
-            if (movieContainerRef) {
+    const handleRight =()=>{
+        if(trendCtx?.trending.length && movieContainerRef.current){
+            if(movieContainerRef.current){
                 movieContainerRef.current.scrollBy({
                     left: 200,
                     behavior: "smooth"
                 })
             }
         }
+
     }
 
     return (
-        <div className="mt-18">
-            <div className="container mx-auto pt-15">
-                <h1 className="font-bold text-lg text-gray-500 p-4">Popular Movies</h1>
+        <div className="">
+            <div className="container mx-auto">
+                <h1 className="font-bold text-lg text-gray-500 p-4">Trending Movies</h1>
                 <div 
                     className="flex flex-nowrap gap-2 w-full overflow-x-hidden mask-x-from-85%" 
                     ref={movieContainerRef}
                 >
-                    {movieCtx?.popMovies?.map(item => (
+                    {trendCtx?.trending?.map(item =>(
                         <div className="w-50 flex-none p-2 border border-gray-200 rounded-md" key={item.id}>
                             <div>
                                 <img className="inline-block w-90" src={`https://media.themoviedb.org/t/p/w220_and_h330_face${item.poster_path}`} />

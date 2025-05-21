@@ -8,27 +8,24 @@ type Movies = {
 
 export const apiContext = createContext<Movies | null>(null)
 
-export const ApiContextProvider = ({children}: {children: ReactNode})=>{
+export const PopularMoviesCtx = ({children}: {children: ReactNode})=>{
 
     const [popMovies, setPopMovies] = useState<any>()
 
-    const movieRequest = async ()=>{
+    const popularMovies = async ()=>{
         try{
             const apiKey = "0ddafbf76e41bd890af671879e1d297a"
             const apiUrl = `https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}&language=pt-BR`
-
             const popularMovies = await axios.get(apiUrl)
             const getMovies = popularMovies.data.results
             setPopMovies(getMovies)
-
-            console.log(popularMovies.data)
         }catch(error){
             console.log("Erro na requisição! "+error)
         }
     }
 
     useEffect(()=>{
-        movieRequest()
+        popularMovies()
     }, [])
 
     return (
