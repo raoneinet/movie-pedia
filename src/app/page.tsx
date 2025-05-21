@@ -1,15 +1,21 @@
 "use client"
 import {Header} from "@/components/header"
-import {ApiContextProvider} from "@/contexts/apiContext"
+import {PopularMoviesCtx} from "@/contexts/popularMoviesCtx"
 import {MovieSection} from "@/components/movieSection"
+import {TrendingProvider} from "@/contexts/trendingAllCtx"
+import {TrendingSection} from "@/components/trendingAll"
 const Page = ()=>{
     return (
-        <ApiContextProvider>
+        
         <div className="absolute overflow-hidden w-full">
             <Header/>
-            <MovieSection/>
+            <PopularMoviesCtx>
+                <TrendingProvider>
+                    <MovieSection/>
+                    <TrendingSection/>
+                </TrendingProvider>
+            </PopularMoviesCtx>
         </div>
-        </ApiContextProvider>
     )
 }
 
