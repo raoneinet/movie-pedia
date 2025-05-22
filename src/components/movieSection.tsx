@@ -30,7 +30,7 @@ export const MovieSection = () => {
     }
 
     return (
-        <div className="mt-18">
+        <div className="mt-5">
             <div className="container mx-auto pt-15">
                 <h1 className="font-bold text-lg text-gray-500 p-4">Popular Movies</h1>
                 <div 

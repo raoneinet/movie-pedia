@@ -4,17 +4,20 @@ import {PopularMoviesCtx} from "@/contexts/popularMoviesCtx"
 import {MovieSection} from "@/components/movieSection"
 import {TrendingProvider} from "@/contexts/trendingAllCtx"
 import {TrendingSection} from "@/components/trendingAll"
+import {SearchCtxProvider} from "@/contexts/searchContext"
 const Page = ()=>{
     return (
         
-        <div className="absolute overflow-hidden w-full">
-            <Header/>
-            <PopularMoviesCtx>
-                <TrendingProvider>
+        <div className="overflow-hidden w-full">
+            <SearchCtxProvider>
+                <Header/>
+                <PopularMoviesCtx>
                     <MovieSection/>
+                </PopularMoviesCtx>
+                <TrendingProvider>    
                     <TrendingSection/>
                 </TrendingProvider>
-            </PopularMoviesCtx>
+            </SearchCtxProvider>
         </div>
     )
 }

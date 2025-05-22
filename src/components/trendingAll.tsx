@@ -31,7 +31,7 @@ export const TrendingSection = () => {
     }
 
     return (
-        <div className="">
+        <div className="mt-5">
             <div className="container mx-auto">
                 <h1 className="font-bold text-lg text-gray-500 p-4">Trending Movies</h1>
                 <div 
