@@ -18,6 +18,7 @@ export const TrendingProvider = ({children}: {children: ReactNode})=>{
             const requestTrending = await axios.get(url)
             const response = requestTrending.data.results
             setTrending(response)
+            console.log(response)
         }catch(erro){
             console.log("Erro ao buscar Trending. "+erro)
         }

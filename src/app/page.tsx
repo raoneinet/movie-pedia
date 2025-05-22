@@ -5,6 +5,7 @@ import {MovieSection} from "@/components/movieSection"
 import {TrendingProvider} from "@/contexts/trendingAllCtx"
 import {TrendingSection} from "@/components/trendingAll"
 import {SearchCtxProvider} from "@/contexts/searchContext"
+
 const Page = ()=>{
     return (
         

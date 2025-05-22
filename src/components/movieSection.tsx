@@ -38,11 +38,11 @@ export const MovieSection = () => {
                     ref={movieContainerRef}
                 >
                     {movieCtx?.popMovies?.map(item => (
-                        <div className="w-50 flex-none p-2 border border-gray-200 rounded-md" key={item.id}>
+                        <div className="w-40 flex-none px-2 rounded-md" key={item.id}>
                             <div>
-                                <img className="inline-block w-90" src={`https://media.themoviedb.org/t/p/w220_and_h330_face${item.poster_path}`} />
+                                <img className="inline-block rounded-md" src={`https://media.themoviedb.org/t/p/w220_and_h330_face${item.poster_path}`} />
                             </div>
-                            <h1 className="font-bold pt-3">{item.title}</h1>
+                            <h1 className="font-bold pt-3 text-sm">{item.title ? item.title : item.name}</h1>
                         </div>
                     ))}
                 </div>
