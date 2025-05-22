@@ -31,7 +31,7 @@ export const TrendingSection = () => {
     }
 
     return (
-        <div className="mt-5">
+        <div className="">
             <div className="container mx-auto">
                 <h1 className="font-bold text-lg text-gray-500 p-4">Trending Movies</h1>
                 <div 
@@ -39,11 +39,11 @@ export const TrendingSection = () => {
                     ref={movieContainerRef}
                 >
                     {trendCtx?.trending?.map(item =>(
-                        <div className="w-50 flex-none p-2 border border-gray-200 rounded-md" key={item.id}>
+                        <div className="w-40 flex-none px-2" key={item.id}>
                             <div>
-                                <img className="inline-block w-90" src={`https://media.themoviedb.org/t/p/w220_and_h330_face${item.poster_path}`} />
+                                <img className="inline-block rounded-md" src={`https://media.themoviedb.org/t/p/w220_and_h330_face${item.poster_path}`} />
                             </div>
-                            <h1 className="font-bold pt-3">{item.title}</h1>
+                            <h1 className="font-bold pt-3 text-sm">{item.title ? item.title : item.name}</h1>
                         </div>
                     ))}
                 </div>
