@@ -43,7 +43,8 @@ export const TrendingSection = () => {
                             <div>
                                 <img className="inline-block rounded-md" src={`https://media.themoviedb.org/t/p/w220_and_h330_face${item.poster_path}`} />
                             </div>
-                            <h1 className="font-bold pt-3 text-sm">{item.title ? item.title : item.name}</h1>
+                            <h1 className="font-extrabold pt-3 text-sm">{item.title ? item.title : item.name}</h1>
+                            <p className="text-sm text-gray-400">{item.release_date ? item.release_date : item.first_air_date}</p>
                         </div>
                     ))}
                 </div>
