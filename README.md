@@ -1,4 +1,4 @@
-Plataforma de filmes
+Moviepedia - plataforma de consulta de informações sobre filmes
 
 ## Iniciando....
 
