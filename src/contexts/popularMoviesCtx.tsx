@@ -19,6 +19,7 @@ export const PopularMoviesCtx = ({children}: {children: ReactNode})=>{
             const popularMovies = await axios.get(apiUrl)
             const getMovies = popularMovies.data.results
             setPopMovies(getMovies)
+            console.log(getMovies)
         }catch(error){
             console.log("Erro na requisição! "+error)
         }
