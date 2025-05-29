@@ -1,7 +1,7 @@
 import { useContext, useRef } from "react"
 import { TrendingContext } from "@/contexts/trendingAllCtx"
 
-export const TrendingSection = () => {
+export const TrendingSection = ({sendClickedMovie}: {sendClickedMovie: (id:number)=>void}) => {
 
     const trendCtx = useContext(TrendingContext)
 
@@ -39,7 +39,7 @@ export const TrendingSection = () => {
                     ref={movieContainerRef}
                 >
                     {trendCtx?.trending?.map(item =>(
-                        <div className="w-40 flex-none px-2" key={item.id}>
+                        <div className="w-40 flex-none px-2 rounded-md cursor-pointer" key={item.id} onClick={() => sendClickedMovie(item.id)}>
                             <div>
                                 <img className="inline-block rounded-md" src={`https://media.themoviedb.org/t/p/w220_and_h330_face${item.poster_path}`} />
                             </div>

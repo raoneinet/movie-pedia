@@ -1,13 +1,10 @@
-import { useContext, useRef, useState } from "react"
+import { useContext, useRef } from "react"
 import { apiContext } from "@/contexts/popularMoviesCtx"
-import { MovieCard } from "./movieModal"
 
-export const PopularMovies = () => {
+export const PopularMovies = ({sendClickedMovie}: {sendClickedMovie: (id:number)=>void}) => {
 
     const movieCtx = useContext(apiContext)
     const movieContainerRef = useRef<HTMLDivElement>(null)
-    const [selectedMovie, setSelectedMovie] = useState<any>([])
-    const [clickedBtn, setClickedBtn] = useState<boolean>(true)
 
     const handleLeft = () => {
         if (movieCtx?.popMovies?.length && movieContainerRef.current) {
@@ -31,21 +28,8 @@ export const PopularMovies = () => {
         }
     }
 
-    const sendClickedMovie = (id: number) => {
-        setClickedBtn(clickedBtn)
-        console.log(id)
-        const selectMovie = movieCtx?.popMovies?.filter(item => id === item.id)
-        setSelectedMovie(selectMovie)
-        console.log(selectMovie)
-    }
-
-    const closeMovieModal = ()=>{
-        setSelectedMovie([])
-    }
-
     return (
         <div className="mt-5">
-            {clickedBtn && <MovieCard movie={selectedMovie} closeModal={closeMovieModal}/>}
                 <>
                     <div className="container mx-auto pt-15">
                         <h1 className="font-bold text-lg text-gray-500 p-4">Popular Movies</h1>
