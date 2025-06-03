@@ -7,6 +7,7 @@ export const SearchResponse = () => {
 
     const closeSearch = ()=>{
         srcRes?.setSearchRes([])
+        srcRes?.setSearchRes([])
     }
 
 
