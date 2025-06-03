@@ -1,5 +1,3 @@
-import {useState} from "react"
-import axios from "axios"
 import { useContext } from "react"
 import {SearchContext} from "@/contexts/searchContext"
 
@@ -19,8 +17,8 @@ export const Header = ()=>{
                         type="text" 
                         placeholder="Search..."
                         className="border border-gray-300 rounded-full py-2 px-3 w-32 md:w-78 text-white"
-                        value={searchCtx?.searchInput}
-                        onChange={e => searchCtx?.setSearchInput(e.target.value)}/>
+                        value={searchCtx?.searchInput ?? ""}
+                        onChange={e => searchCtx?.setSearchInput?.(e.target.value)}/>
                     <button className="-ml-10 cursor-pointer"
                         onClick={searchCtx?.handleSearch}>
                         <img src="/assets/icons/search.svg" className="w-7 h-7"/>
