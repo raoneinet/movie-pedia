@@ -7,25 +7,6 @@ export const Header = ()=>{
 
     const searchCtx = useContext(SearchContext)
 
-    //const [searchInput, setSearchInput] = useState<string>()
-
-    /*const handleSearch = async ()=> {
-        if(searchInput?.trim() === ""){
-            alert("É preciso digitar um nome no campo de busca")
-        }
-
-        const url = `https://api.themoviedb.org/3/search/movie?query=${searchInput}&api_key=0ddafbf76e41bd890af671879e1d297a&language=pt-BR`
-        const searchMovie = await axios.get(url, {
-            method: "GET",
-            headers: {
-                accept: "application/json"
-            }
-        })
-        console.log(searchMovie.data.results)
-        setSearchInput("")
-    }*/
-    
-
     return (
         <header className="bg-black py-4  w-full">
             <div className="container mx-auto h-full flex justify-around items-center">

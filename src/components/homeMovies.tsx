@@ -5,9 +5,12 @@ import { TrendingContext } from "@/contexts/trendingAllCtx"
 import {LoadingBtn} from "./loading"
 import { apiContext } from "@/contexts/popularMoviesCtx"
 import { MovieCard } from "./movieModal"
+import {SearchResponse} from "./searchResponse"
+import {SearchContext} from "@/contexts/searchContext"
 
 export const HomeMovies = () => {
 
+    const showSearchRes = useContext(SearchContext)
     const loadCtx = useContext(TrendingContext)
     const movieCtx = useContext(apiContext)
 
@@ -23,7 +26,7 @@ export const HomeMovies = () => {
     }
 
     const closeMovieModal = ()=>{
-        setSelectedMovie([])
+        if(selectedMovie.length >= 0) setSelectedMovie([])
     }
 
     return (
@@ -32,10 +35,14 @@ export const HomeMovies = () => {
                 <LoadingBtn/>
             }
             {!loadCtx?.loadingTrend && loadCtx?.trending &&
-                <div>
+                <div className="">
                     {clickedBtn && <MovieCard movie={selectedMovie} closeModal={closeMovieModal}/>}
-                    <PopularMovies sendClickedMovie={sendClickedMovie}/>
-                    <TrendingSection sendClickedMovie={sendClickedMovie}/>
+                    {showSearchRes?.searcRes.length !== 0 ? <SearchResponse/> :
+                        <>
+                            <PopularMovies sendClickedMovie={sendClickedMovie}/>
+                            <TrendingSection sendClickedMovie={sendClickedMovie}/>
+                        </> 
+                    }
                 </div>
             }
         </div>

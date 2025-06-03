@@ -31,8 +31,8 @@ export const TrendingSection = ({sendClickedMovie}: {sendClickedMovie: (id:numbe
     }
 
     return (
-        <div className="">
-            <div className="container mx-auto">
+        <div className="lg:w-7xl mx-auto">
+            <div className="mx-auto">
                 <h1 className="font-bold text-lg text-gray-500 p-4">Trending Movies</h1>
                 <div 
                     className="flex flex-nowrap gap-2 w-full overflow-x-hidden mask-x-from-85%" 
