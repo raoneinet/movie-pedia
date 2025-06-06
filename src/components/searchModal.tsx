@@ -7,7 +7,7 @@ type Props = {
 
 export const SearchModal = ({ searchedMovie, closeSearchModal}: Props) => {
     return (
-        <div className="text-gray-800 px-3">
+        <div className="text-white px-3">
             {searchedMovie.map(item => (
                 <div>
                     <div className="place-self-end text-xl text-red-600 font-bold cursor-pointer" onClick={closeSearchModal}>X</div>

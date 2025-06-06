@@ -49,7 +49,7 @@ export const SearchResponse = () => {
                         </div>
                     ))}
                 </div>
-                <div className="md:max-w-96 max-h-11/12 bg-gray-200 overflow-y-scroll md:overflow-y-hidden">
+                <div className="md:max-w-96 max-h-11/12 bg-[#202020] text-white overflow-y-scroll md:overflow-y-hidden">
                     {clickedBtn && selectedSearched.length !== 0 && <SearchModal searchedMovie={selectedSearched} closeSearchModal={closeSearchModal}/>}
                 </div>
             </div>
