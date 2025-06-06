@@ -19,6 +19,11 @@ export const SearchResponse = () => {
         setSelectedSearched(selectItemSearch)
     }
 
+    const closeSearchModal = ()=>{
+        setClickedBtn(false)
+        setSelectedSearched([])
+    }
+
     return (
         <div className="mt-5 lg:w-7xl mx-auto">
             <div className="flex justify-between items-center">
@@ -34,17 +39,18 @@ export const SearchResponse = () => {
                         <div className="w-40 flex-none px-2 rounded-md cursor-pointer mb-4" 
                             key={item.id} onClick={()=>searchMovieModal(item.id)}>
                             <div>
-                                <img className="inline-block rounded-md" src={`https://media.themoviedb.org/t/p/w220_and_h330_face${item.poster_path}`} />
+                                <img className="inline-block rounded-md" 
+                                src={`https://media.themoviedb.org/t/p/w220_and_h330_face${item.poster_path ?? item.backdrop_path}`} />
                             </div>
                             <div className="">
-                                <h1 className="font-extrabold pt-3 text-sm">{item.title ? item.title : item.name}</h1>
-                                <p className="text-sm text-gray-500">{item.release_date ? item.release_date : item.first_air_date}</p>
+                                <h1 className="font-extrabold pt-3 text-sm">{item.title ?? item.name}</h1>
+                                <p className="text-sm text-gray-500">{item.release_date ?? item.first_air_date}</p>
                             </div>
                         </div>
                     ))}
                 </div>
                 <div className="md:max-w-96 max-h-11/12 bg-gray-200 overflow-y-scroll md:overflow-y-hidden">
-                    {clickedBtn && <SearchModal searchedMovie={selectedSearched}/>}
+                    {clickedBtn && selectedSearched.length !== 0 && <SearchModal searchedMovie={selectedSearched} closeSearchModal={closeSearchModal}/>}
                 </div>
             </div>
         </div>

@@ -19,7 +19,7 @@ export const MovieCard = ({ movie, closeModal }: Props) => {
                         <div key={item.id} className="px-3 md:w-3xl flex flex-col md:flex-row gap-4 m-auto text-white">
                             <div className="w-64">
                                 <img className="w-64 rounded-md"
-                                    src={`https://media.themoviedb.org/t/p/w220_and_h330_face${item.poster_path}`}
+                                    src={`https://media.themoviedb.org/t/p/w220_and_h330_face${item.poster_path ?? item.backdrop_path}`}
                                 />
                                 <h1 className="text-lg wrap font-bold">{item.title ? item.title : item.name}</h1>
                             </div>
