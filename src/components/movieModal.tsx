@@ -12,7 +12,7 @@ export const MovieCard = ({ movie, closeModal }: Props) => {
             {movie.length !== 0 && movie.map(item =>(   
                 <div key={item.id} className="w-screen md:h-1/3 grid py-6 bg-[#202020]">
                     <div 
-                        className="text-white text-xl font-bold mr-8 p-2 cursor-pointer rounded-full border-2 inline place-self-end" 
+                        className="text-red-600 text-xl font-bold mr-8 p-2 cursor-pointer inline place-self-end" 
                         onClick={closeModal}>X
                     </div>
                     {movie.length !== 0 &&
