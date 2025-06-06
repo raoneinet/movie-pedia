@@ -29,8 +29,8 @@ export const PopularMovies = ({ sendClickedMovie }: { sendClickedMovie: (id: num
     }
 
     return (
-        <div className="mt-5 lg:w-7xl mx-auto">
-            <div className="container mx-auto pt-10">
+        <div className="mt-5 xl:w-7xl mx-auto">
+            <div className="container mx-auto">
                 <h1 className="font-bold text-lg text-gray-500 p-4">Popular Movies</h1>
                 <div
                     className="flex flex-nowrap gap-2 w-full overflow-x-hidden mask-x-from-85%"

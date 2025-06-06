@@ -4,7 +4,6 @@ import { TrendingContext } from "@/contexts/trendingAllCtx"
 export const TrendingSection = ({sendClickedMovie}: {sendClickedMovie: (id:number)=>void}) => {
 
     const trendCtx = useContext(TrendingContext)
-
     const movieContainerRef = useRef<HTMLDivElement>(null)
 
     const handleLeft =()=>{
@@ -27,12 +26,11 @@ export const TrendingSection = ({sendClickedMovie}: {sendClickedMovie: (id:numbe
                 })
             }
         }
-
     }
 
     return (
-        <div className="lg:w-7xl mx-auto">
-            <div className="mx-auto">
+        <div className="xl:w-7xl mx-auto">
+            <div className="container mx-auto">
                 <h1 className="font-bold text-lg text-gray-500 p-4">Trending Movies</h1>
                 <div 
                     className="flex flex-nowrap gap-2 w-full overflow-x-hidden mask-x-from-85%" 

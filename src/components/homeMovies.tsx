@@ -19,10 +19,8 @@ export const HomeMovies = () => {
 
     const sendClickedMovie = (id: number) => {
         setClickedBtn(clickedBtn)
-        console.log(id)
         const selectMovie = movieCtx?.popMovies?.filter(item => id === item.id)
         setSelectedMovie(selectMovie)
-        console.log(selectMovie)
     }
 
     const closeMovieModal = ()=>{
