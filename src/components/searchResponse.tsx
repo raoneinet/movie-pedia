@@ -33,7 +33,7 @@ export const SearchResponse = () => {
                     onClick={closeSearch}>Fechar pesquisa
                 </div>
             </div>
-            <div className={`mx-auto lg:max-w-7xl flex justify-center mt-6 ${clickedBtn && "fixed"} max-h-11/14`}>
+            <div className={`mx-auto lg:max-w-7xl flex justify-center mt-6 ${clickedBtn && "fixed"} min-h-11/13 max-h-11/15`}>
                 <div className={`flex flex-1 flex-wrap ${clickedBtn && "overflow-y-scroll"}`}>
                     {srcRes?.searchSuccess === 200 && srcRes?.searcRes.map(item => (
                         <div className="w-40 flex-none px-2 rounded-md cursor-pointer mb-4" 
@@ -49,9 +49,13 @@ export const SearchResponse = () => {
                         </div>
                     ))}
                 </div>
-                <div className="md:max-w-96 max-h-11/12 bg-[#202020] text-white overflow-y-scroll md:overflow-y-hidden">
-                    {clickedBtn && selectedSearched.length !== 0 && <SearchModal searchedMovie={selectedSearched} closeSearchModal={closeSearchModal}/>}
-                </div>
+                
+                {clickedBtn && selectedSearched.length !== 0 &&
+                    <div className="w-fit md:w-md md:max-h-11/15 bg-[#202020] text-white overflow-y-scroll md:overflow-y-hidden"> 
+                        <SearchModal searchedMovie={selectedSearched} closeSearchModal={closeSearchModal}/>
+                    </div>
+                }
+                
             </div>
         </div>
     )

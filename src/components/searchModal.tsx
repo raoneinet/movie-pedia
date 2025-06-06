@@ -12,7 +12,7 @@ export const SearchModal = ({ searchedMovie, closeSearchModal}: Props) => {
                 <div>
                     <div className="place-self-end text-xl text-red-600 font-bold cursor-pointer" onClick={closeSearchModal}>X</div>
                     <div>
-                        <img className="rounded-md" 
+                        <img className="rounded-md md:w-2/3 w-1/2" 
                             src={`https://media.themoviedb.org/t/p/w220_and_h330_face${item.poster_path ?? item.backdrop_path}`} />
                         <h1 className="text-2xl font-bold uppercase mt-3">{item.original_title}</h1>
                     </div>
