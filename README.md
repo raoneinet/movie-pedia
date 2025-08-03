@@ -1,52 +1,95 @@
-Moviepedia - plataforma de consulta de informações sobre filmes
+# 🎬 Moviepedia
 
-## Iniciando....
+**Moviepedia** é uma plataforma web para consulta de **informações sobre filmes e séries**, consumindo dados em tempo real da API pública do [TMDB](https://api.themoviedb.org/).
 
-Primeiro, rode o seguindo comando para instalar as dependências Node:
+---
 
-```bash
+## 🚀 Iniciando o projeto
+
+1. Clone o repositório:
+   ```bash
+   git clone https://github.com/seu-usuario/moviepedia.git
+   cd moviepedia
+   
+Instale as dependências:
+
+bash
+
 npm install
-```
+# ou
+yarn install
 
-Em seguinda, para iniciar a aplicação, rode um dos seguintes comandos:
+Inicie o servidor de desenvolvimento:
 
-```bash
+bash
+
 npm run dev
-# or
+# ou
 yarn dev
-# or
+# ou
 pnpm dev
-# or
+# ou
 bun dev
-```
 
-Abra em seu navegador: [http://localhost:3000](http://localhost:3000) 
+Acesse no navegador:
+http://localhost:3000
 
-Neste projeto está sendo consumido dados da API da plataforma TMDB (sobre filmes, séries, etc) onde é retornado um Array de objetos.
+🌐 Fonte dos dados
+Os dados são obtidos da API do TMDB (The Movie Database), que retorna um array de objetos com metadados sobre filmes, séries, popularidade, avaliações, entre outros.
 
-Os resultados são recebidos no índice ```bash .data.results```
+Os resultados são acessados via:
 
-Api: https://api.themoviedb.org/
-
-## API TMDB Metadata
-```bash
+response.data.results
+Exemplo de estrutura de resposta:
 [
   {
-    adult: false,
-    backdrop_path: "/2Nti3gYAX513wvhp8IiLL6ZDyOm.jpg",
-    genre_ids: [10751, 35, 12, 14],
-    length: 4,
-    id: 950387,
-    original_language: "en",
-    original_title: "A Minecraft Movie",
-    overview: "Quatro desajustados enfrentam problemas comuns do dia a dia quando, de repente, são sugados por um portal misterioso para o Overworld: uma terra fascinante e cúbica,                   movida pela imaginação. Para voltarem para casa, eles precisarão dominar esse novo mundo enquanto embarcam em uma jornada mágica ao lado de um crafter experiente e                     inesperado: Steve.",
-    popularity: 868.2685,
-    poster_path: "/4VtkIaj76TpQNfhDHXQDdT9uBN5.jpg",
-    release_date: "2025-03-31",
-    title: "Um Filme Minecraft",
-    video: false,
-    vote_average: 6.521,
-    vote_count: 1191,
-  {
+    "id": 950387,
+    "title": "Um Filme Minecraft",
+    "overview": "Quatro desajustados enfrentam problemas comuns do dia a dia...",
+    "poster_path": "/4VtkIaj76TpQNfhDHXQDdT9uBN5.jpg",
+    "backdrop_path": "/2Nti3gYAX513wvhp8IiLL6ZDyOm.jpg",
+    "release_date": "2025-03-31",
+    "vote_average": 6.5,
+    "vote_count": 1191,
+    "genre_ids": [10751, 35, 12, 14],
+    "original_language": "en",
+    "popularity": 868.26
+  }
 ]
-```
+
+🛠 Tecnologias utilizadas
+React.js com Next.js
+
+TypeScript
+
+Tailwind CSS
+
+Axios (para chamadas HTTP)
+
+TMDB API (The Movie Database)
+
+🔐 Configuração da API Key
+Para consumir a API do TMDB, você precisa de uma chave de API:
+
+Crie uma conta em https://www.themoviedb.org/.
+
+Solicite sua API Key no painel de desenvolvedor.
+
+Crie um arquivo .env.local na raiz do projeto e adicione:
+
+📱 Responsividade
+A interface da Moviepedia é totalmente responsiva e adaptada para celulares, tablets e desktops.
+
+💡 Funcionalidades
+🔎 Busca de filmes por título;
+
+🗂️ Listagem por popularidade, lançamento ou avaliações;
+
+🖼️ Exibição de cartaz, título, sinopse e nota de avaliação;
+
+✅ Otimizada para desempenho com Next.js;
+
+🎯 Design moderno com Tailwind CSS.
+
+✍️ Autor
+Desenvolvido por Raone Ferreira
